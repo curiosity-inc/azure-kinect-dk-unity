@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-kinect-dk-lib", "azure-kinect-dk-lib\azure-kinect-dk-lib.vcxproj", "{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-kinect-dk-sample", "azure-kinect-dk-sample\azure-kinect-dk-sample.vcxproj", "{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Debug|x64.ActiveCfg = Debug|x64
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Debug|x64.Build.0 = Debug|x64
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Debug|x86.ActiveCfg = Debug|Win32
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Debug|x86.Build.0 = Debug|Win32
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Release|x64.ActiveCfg = Release|x64
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Release|x64.Build.0 = Release|x64
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Release|x86.ActiveCfg = Release|Win32
+		{5C4685D4-6DDD-4C37-8D1F-07BAF3FEA3B1}.Release|x86.Build.0 = Release|Win32
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Debug|x64.ActiveCfg = Debug|x64
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Debug|x64.Build.0 = Debug|x64
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Debug|x86.ActiveCfg = Debug|Win32
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Debug|x86.Build.0 = Debug|Win32
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Release|x64.ActiveCfg = Release|x64
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Release|x64.Build.0 = Release|x64
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Release|x86.ActiveCfg = Release|Win32
+		{57DF664B-6BB8-49F8-B94E-B34DB8C76CFA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {591C3E24-7BFF-4153-9080-C479B92049DE}
+	EndGlobalSection
+EndGlobal
