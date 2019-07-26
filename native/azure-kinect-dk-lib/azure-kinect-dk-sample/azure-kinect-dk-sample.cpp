@@ -91,6 +91,14 @@ int main()
 			{
 				size_t num_bodies = k4abt_frame_get_num_bodies(body_frame);
 				printf("%zu bodies are detected!\n", num_bodies);
+				if (num_bodies > 0) {
+					k4abt_skeleton_t skeleton;
+					k4abt_frame_get_body_skeleton(body_frame, 0, &skeleton);
+					for (int i = 0; i < 26; i++) {
+						auto j = skeleton.joints[i];
+						printf("%f, %f, %f\n", j.position.v[0], j.position.v[1], j.position.v[2]);
+					}
+				}
 
 				k4abt_frame_release(body_frame);
 			}
