@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------------------------
-// <copyright file="NativeMethods.cs" company="Microsoft">
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// <copyright file="BodyTrackingNativeMethods.cs" company="Microsoft">
+// Copyright (c) Takahiro Horikawa. All rights reserved.
 // Licensed under the MIT License.
 // </copyright>
 //------------------------------------------------------------------------------
