@@ -39,4 +39,5 @@ extern "C" {
 	AZUREKINECTDKLIB_API int GetNumBodies(void* bodyFrame);
 	AZUREKINECTDKLIB_API void GetBodySkeleton(void* pBodyFrame, int index, void* output);
 	AZUREKINECTDKLIB_API unsigned int GetBodyId(void* bodyFrame, int index);
+	AZUREKINECTDKLIB_API int CheckCapture(void* capture);
 }

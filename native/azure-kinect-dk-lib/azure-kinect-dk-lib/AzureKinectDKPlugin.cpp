@@ -13,6 +13,34 @@
 bool flag = false;
 static std::map<int, int> trackingThreadMap;
 
+#define PUB_HANDLE_TYPE(type) type##_wrapper_##_cpp
+
+typedef enum
+{
+	IMAGE_TYPE_COLOR = 0,
+	IMAGE_TYPE_DEPTH,
+	IMAGE_TYPE_IR,
+	IMAGE_TYPE_COUNT,
+} image_type_index_t;
+
+typedef void* LOCK_HANDLE;
+
+typedef struct _capture_context_t
+{
+	volatile long ref_count;
+	LOCK_HANDLE lock;
+
+	k4a_image_t image[IMAGE_TYPE_COUNT];
+
+	float temperature_c; /** Temperature in Celsius */
+} capture_context_t;
+
+typedef struct PUB_HANDLE_TYPE(k4a_capture_t)                                                               \
+{                                                                                                                  \
+char *handleType;                                                                                              \
+capture_context_t context;                                                                               \
+} PUB_HANDLE_TYPE(k4a_capture_t);
+
 void ReadBodyTrackingData(k4a_device_t device, k4abt_tracker_t tracker, BodyTrackingCallbackPtr callback) {
 	int frame_count = 0;
 	while (flag) {
@@ -130,4 +158,18 @@ AZUREKINECTDKLIB_API void GetBodySkeleton(void* pBodyFrame, int index, void* out
 AZUREKINECTDKLIB_API unsigned int GetBodyId(void* pBodyFrame, int index) {
 	k4abt_frame_t body_frame = static_cast<k4abt_frame_t>(pBodyFrame);
 	return k4abt_frame_get_body_id(body_frame, index);
+}
+
+AZUREKINECTDKLIB_API int CheckCapture(void* pCapture) {
+	printf("check1\n");
+	k4a_capture_t sensor_capture = static_cast<k4a_capture_t>(pCapture);
+	auto a = ((PUB_HANDLE_TYPE(k4a_capture_t) *)sensor_capture)->handleType;
+	printf("check2\n");
+	// k4a_capture_t_get_context(sensor_capture);
+	//capture_dec_ref(sensor_capture);
+	auto img = k4a_capture_get_color_image(sensor_capture);
+	printf("check3\n");
+	auto size = k4a_image_get_size(img);
+	printf("[%s] %d\n", a, size);
+	return 0;
 }

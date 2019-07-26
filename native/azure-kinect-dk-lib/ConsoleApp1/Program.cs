@@ -30,20 +30,15 @@ namespace k4atest
                 {
 
                     int frameCount = 0;
-                    while (frameCount < 3000)
+                    while (frameCount < 300)
                     {
-                        // System.Diagnostics.Debug.WriteLine("Start Capture");
                         using (Capture capture = await Task.Run(() => device.GetCapture()).ConfigureAwait(true))
                         {
-                            var img = capture.Color;
-                            System.Diagnostics.Debug.WriteLine(img == null);
-                            System.Diagnostics.Debug.WriteLine(capture.Temperature);
-                            // capture.
-                            // await Task.Run(() => tracker.EnqueueCapture(capture)).ConfigureAwait(true);
-                            //using (BodyFrame frame = await Task.Run(() => tracker.PopResult()).ConfigureAwait(true))
-                            //{
-                            //    System.Diagnostics.Debug.WriteLine(frame.NumBodies);
-                            //}
+                            await Task.Run(() => tracker.EnqueueCapture(capture)).ConfigureAwait(true);
+                        }
+                        using (BodyFrame frame = await Task.Run(() => tracker.PopResult()).ConfigureAwait(true))
+                        {
+                            System.Diagnostics.Debug.WriteLine(frame.NumBodies);
                         }
                         frameCount++;
                     }

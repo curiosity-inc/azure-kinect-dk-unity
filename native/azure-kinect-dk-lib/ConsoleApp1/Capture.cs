@@ -215,6 +215,17 @@ namespace Microsoft.Azure.Kinect.Sensor
 
         private NativeMethods.k4a_capture_t handle;
 
+        internal NativeMethods.k4a_capture_t DangerousGetHandle()
+        {
+            lock (this)
+            {
+                if (disposedValue)
+                    throw new ObjectDisposedException(nameof(Capture));
+
+                return handle;
+            }
+        }
+
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 

@@ -76,7 +76,7 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
 
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
-        public static extern NativeMethods.k4a_wait_result_t k4abt_tracker_enqueue_capture(k4abt_tracker_t tracker_handle, Capture sensor_capture_handle, Int32 timeout_in_ms);
+        public static extern NativeMethods.k4a_wait_result_t k4abt_tracker_enqueue_capture(k4abt_tracker_t tracker_handle, NativeMethods.k4a_capture_t sensor_capture_handle, Int32 timeout_in_ms);
 
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
@@ -101,6 +101,7 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
         public static extern UInt32 k4a_device_get_installed_count();
+
         #endregion
 
     }

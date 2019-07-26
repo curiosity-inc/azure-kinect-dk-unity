@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
                 if (disposedValue)
                     throw new ObjectDisposedException(nameof(Device));
 
-                NativeMethods.k4a_wait_result_t result = BodyTrackingNativeMethods.k4abt_tracker_enqueue_capture(handle, capture, timeoutInMS);
+                NativeMethods.k4a_wait_result_t result = BodyTrackingNativeMethods.k4abt_tracker_enqueue_capture(handle, capture.DangerousGetHandle(), timeoutInMS);
 
                 if (result == NativeMethods.k4a_wait_result_t.K4A_WAIT_RESULT_TIMEOUT)
                 {
