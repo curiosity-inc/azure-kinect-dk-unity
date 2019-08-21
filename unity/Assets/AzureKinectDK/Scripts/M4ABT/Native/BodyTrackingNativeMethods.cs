@@ -102,6 +102,10 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
         [NativeReference]
         public static extern UInt32 k4abt_frame_get_body_id(k4abt_frame_t body_frame_handle, UInt32 index);
 
+        [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
+        [NativeReference]
+        public static extern NativeMethods.k4a_image_t k4abt_frame_get_body_index_map(k4abt_frame_t body_frame_handle);
+
         #endregion
 
     }
