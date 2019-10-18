@@ -8,7 +8,9 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
     {
         Pelvis = 0, SpineNaval, SpineChest, Neck,
         ClavicleLeft, ShoulderLeft, ElbowLeft, WristLeft,
+        HandLeft, HandTipLeft, ThumbLeft,
         ClavicleRight, ShoulderRight, ElbowRight, WristRight,
+        HandRight, HandTipRight, ThumbRight,
         HipLeft, KneeLeft, AnkleLeft, FootLeft,
         HipRight, KneeRight, AnkleRight, FootRight,
         Head, Nose, EyeLeft, EarLeft,

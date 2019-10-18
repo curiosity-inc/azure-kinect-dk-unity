@@ -68,7 +68,7 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
 
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
-        public static extern NativeMethods.k4a_result_t k4abt_tracker_create(Calibration sensorCalibration, out k4abt_tracker_t tracker_handle);
+        public static extern NativeMethods.k4a_result_t k4abt_tracker_create(Calibration sensorCalibration, TrackerCalibration trackerCalibration, out k4abt_tracker_t tracker_handle);
 
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
