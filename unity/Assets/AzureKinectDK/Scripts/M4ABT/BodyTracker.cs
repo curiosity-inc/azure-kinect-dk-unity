@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Kinect.Sensor.BodyTracking
         public static BodyTracker Create(Calibration sensorCalibration)
         {
             AzureKinectException.ThrowIfNotSuccess(
-                BodyTrackingNativeMethods.k4abt_tracker_create(sensorCalibration, out BodyTrackingNativeMethods.k4abt_tracker_t handle));
+                BodyTrackingNativeMethods.k4abt_tracker_create(sensorCalibration, new TrackerCalibration
+                {
+                    sensor_orientation = SensorOrientation.K4ABT_SENSOR_ORIENTATION_DEFAULT,
+                    cpu_only_mode = 0
+                }, out BodyTrackingNativeMethods.k4abt_tracker_t handle));
 
             return new BodyTracker(handle);
         }
