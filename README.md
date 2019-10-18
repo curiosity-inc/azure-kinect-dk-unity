@@ -5,11 +5,11 @@ Unity example to use Azure Kinect DK (works with both Sensor SDK and Body Tracki
 ![Screenshot](screenshot.jpg?raw=true "ScreenShot")
 
 ## Tested environment
-As of July 27, 2019, this repo has been tested under the following environment.
-- Windows 10 Pro (ver 1803)
+As of Oct 19, 2019, this repo has been tested under the following environment.
+- Windows 10 Pro (ver 1903)
 - [Azure Kinect Sensor SDK](https://docs.microsoft.com/ja-jp/azure/Kinect-dk/sensor-sdk-download) v1.3.0
 - [Azure Kinect Body Tracking SDK](https://docs.microsoft.com/ja-jp/azure/Kinect-dk/body-sdk-download) v0.9.4
-- Unity 2019.1.11f1
+- Unity 2019.1.14f1
 - CUDA v10.0
 - cudnn v7.5.1.10
 
